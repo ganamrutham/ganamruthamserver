@@ -23,11 +23,13 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+let data = req.body;
+
 const mailOptions = {
   from: "srivenkateswaraganamrutham@gmail.com",
   to: "srivenkateswaraganamrutham@gmail.com",
   subject: "New Message",
-  text: req.body.name + req.body.email + req.body.message,
+  text: data.name + data.email + data.message,
 };
 
 transporter.sendMail(mailOptions, (error, info) => {
