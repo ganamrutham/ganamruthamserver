@@ -34,7 +34,8 @@ const mailOptions = {
 
 transporter.sendMail(mailOptions, (error, info) => {
   if (error) {
-    return console.log(`Error occured:`, error);
+    //return console.log(`Error occured:`, error);
+    res.status(500).send(error)
   }
   console.log(`Email sent successfully:`, info.response);
   res.status(200).send('success')
