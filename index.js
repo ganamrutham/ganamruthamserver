@@ -26,8 +26,8 @@ const transporter = nodemailer.createTransport({
 const mailOptions = {
   from: "srivenkateswaraganamrutham@gmail.com",
   to: "srivenkateswaraganamrutham@gmail.com",
-  subject: "Test Email from Node.js",
-  text: "Hello, this is a test email sent rom Node.js using Nodemailer",
+  subject: "New Message",
+  text: req.body,
 };
 
 transporter.sendMail(mailOptions, (error, info) => {
