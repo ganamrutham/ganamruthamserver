@@ -35,7 +35,7 @@ transporter.sendMail(mailOptions, (error, info) => {
     return console.log(`Error occured:`, error);
   }
   console.log(`Email sent successfully:`, info.response);
-  res.send('Hello World!')
+  res.send('Hello World!', info.response)
 })
 
 })
