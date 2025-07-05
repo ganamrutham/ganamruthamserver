@@ -9,6 +9,11 @@ app.listen(port, () => {
 
 const nodemailer = require("nodemailer");
 
+app.get('/', (req, res) => {  
+    res.send('Hello World!')
+
+})
+
 app.get('/sendemail', (req, res) => {  
 const transporter = nodemailer.createTransport({
   service: "gmail",
