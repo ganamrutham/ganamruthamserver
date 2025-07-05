@@ -4,7 +4,21 @@ const app = express()
 const port = 3000
 
 app.use(bodyParser)
-app.use(cors())
+var dynamicCorsOptions = function(req, callback) {
+    var corsOptions;
+    if (req.path.startsWith('/sendemail')) {
+      corsOptions = {
+        origin: 'https://www.srivenkateswaraganamrutham.org/', // Allow only a specific origin
+        credentials: true,            // Enable cookies and credentials
+      };
+    } else {
+      corsOptions = { origin: '*' };   // Allow all origins for other routes
+    }
+    callback(null, corsOptions);
+  };
+  
+  app.use(cors(dynamicCorsOptions));
+//app.use(cors())
 
 
 app.listen(port, () => {
