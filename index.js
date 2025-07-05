@@ -27,7 +27,7 @@ const mailOptions = {
   from: "srivenkateswaraganamrutham@gmail.com",
   to: "srivenkateswaraganamrutham@gmail.com",
   subject: "New Message",
-  text: req.body,
+  text: req.body.name + req.body.email + req.body.message,
 };
 
 transporter.sendMail(mailOptions, (error, info) => {
