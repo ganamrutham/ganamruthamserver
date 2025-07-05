@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 
 })
 
-app.get('/sendemail', (req, res) => {  
+app.post('/sendemail', (req, res) => {  
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
